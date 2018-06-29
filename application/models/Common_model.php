@@ -6,7 +6,6 @@ error_reporting(0);
  * @package    Common_model
  * @author     Vinil Lakkavatri (vinil.lakkavatri@icloud.com)
  * @copyright  2017 Vinil Lakkavatri
- * @company    FiHavock Digital Pvt Ltd
  * @ci_version 3.1.9 echo CI_VERSION;
  * @deprecated File deprecated in Release 2.0.0
  *
