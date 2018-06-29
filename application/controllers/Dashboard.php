@@ -5,7 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @package    Dashboard
  * @author     Vinil Lakkavatri (vinil.lakkavatri@icloud.com)
  * @copyright  2018 Vinil Lakkavatri
- * @company    FiHavock Digital Pvt Ltd
  * @ci_version 3.1.9 echo CI_VERSION;
  * @deprecated File deprecated in Release 2.0.0
  *
