@@ -85,7 +85,7 @@
 						<span class="label-input100">Notes</span>
 					</div>
 			
-					<input type="hidden" name="" value="<?php echo(!empty($id) ? $id : '') ?>">
+					<input type="hidden" name="contact_id" value="<?php echo(!empty($id) ? $id : '') ?>">
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" id="">
 							Update
