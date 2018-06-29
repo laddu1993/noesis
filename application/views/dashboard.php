@@ -100,7 +100,7 @@ body {
                 <td><?php echo $value['first_name']; ?></td>
                 <td><?php echo $value['last_name']; ?></td>
                 <td><?php echo $value['mobile_no']; ?></td>
-                <td><a onclick="del_stud(this.id,'<?php echo $value['id']; ?>')" id="del_stud<?php echo $i; ?>" style="cursor: pointer;">Delete</a> </td>
+                <td><a href="<?= site_url('Dashboard/edit_contact/'.$value['id'].'') ?>" style="cursor: pointer;">Edit</a> &nbsp; <a onclick="del_stud(this.id,'<?php echo $value['id']; ?>')" id="del_stud<?php echo $i; ?>" style="cursor: pointer;">Delete</a> </td>
             </tr>
         <?php $i++; } } ?>
 

@@ -57,6 +57,33 @@ class Dashboard extends CI_Controller {
 		$this->load->view('add-new-contact');
 	}
 
+	function edit_contact(){
+		if (isset($_POST) && !empty($_POST)) {
+			$up_data['first_name'] = $this->input->post('first_name');
+			$up_data['middle_name'] = $this->input->post('middle_name');
+			$up_data['last_name'] = $this->input->post('last_name');
+			$up_data['email'] = $this->input->post('email');
+			$up_data['mobile_no'] = $this->input->post('mobile_no');
+			$up_data['landline_no'] = $this->input->post('landline_no');
+			$up_data['notes'] = $this->input->post('notes');
+			$contact_id = $this->input->post('contact_id');
+			$whr = '(id = '.$contact_id.')';
+			$insert_data = $this->common->update_into_table_with_multiple_condition('enquiries',$whr,$up_data);
+			$this->session->set_flashdata('message','Successfully Updated Contact!');
+			redirect('Dashboard/edit_contact/'.$contact_id);
+		}
+		$contact_id = $this->uri->segment(3);
+		if (!empty($contact_id)) {
+			$whr = '(id = '.$contact_id.')';
+			$data = current($this->common->fetch_all_table_data_multiple_condition('enquiries',$whr));
+		}
+		if (!empty($data)) {
+			$this->load->view('edit_contact',$data);
+		}else{
+			$this->load->view('edit_contact');
+		}
+	}
+
 	function del_contact(){
 		if (isset($_POST['reqtype_del']) && !empty($_POST['reqtype_del'] == 'delete')) {
 			$contact_id = $this->input->post('contact_id');
